@@ -6,6 +6,7 @@
     <title>L'assise Terre & Mer</title>
     <link rel="icon" href="photo/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="a.css">
+	<script src="photo.js" defer></script>
 </head>
 <body>
     <header>
@@ -13,84 +14,128 @@
             <img src="photo/logo.png" alt="Logo" class="logo">
             <h1>L'assise Terre & Mer</h1>
         </div>
-		<br>
+        <br>
         <nav>
             <ul class="header-nav">
                 <li><a href="index.html">Accueil</a></li>
-				<li><a href="photo.html">Réalisation</a></li>
+                <li><a href="photo.html">Réalisation</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-		<br><br>
-		<div class="photo">
-			<div class="carousel">
-				<div class="carousel-images">
-					<img src="photo/bateau.jpg" alt="Image 1">
-					<img src="photo/bateau2.jpg" alt="Image 2">
-					<img src="photo/bateau3.jpg" alt="Image 3">
-				</div>
-			</div>
-		</div>
-		<br><br>
-		<div class="photo">
-			<div class="carousel">
-				<div class="carousel-images">
-					<img src="photo/bimini.jpg" alt="Image 1">
-					<img src="photo/bimini2.jpg" alt="Image 2">
-					<img src="photo/bimini3.jpg" alt="Image 3">
-					<img src="photo/bimini4.jpg" alt="Image 4">
-				</div>
-			</div>
-			<p>Housse de bimini</p>
-		</div>		
-		<br><br>		
-			
-		<div class="photo">
-			<div class="carousel">
-				<div class="carousel-images">
-					<img src="photo/canapée.jpg" alt="Image 1">
-					<img src="photo/canapée2.jpg" alt="Image 2">
-				</div>
-			</div>
-		</div>	
-		<br><br>
-		<div class="photo">
-			<div class="carousel">
-				<div class="carousel-images">
-					<img src="photo/housse.jpg" alt="Image 1">
-					<img src="photo/housse2.jpg" alt="Image 2">
-					<img src="photo/housse3.jpg" alt="Image 3">
-					<img src="photo/housse4.jpg" alt="Image 4">
-				</div>
-			</div>
-			<p>Confection d'une housse de bain de soleil pour un Targa 44🛥.<br> Trois coussins solidaires entre eux et un coussin pour accéder au hublot. <br>Finition velcro et sangle pour l'attacher.</P>
-		</div>	
-		<br><br>
-        <div class="photo">
-			<div class="carousel">
-				<div class="carousel-images">
-					<img src="photo/voilier.jpg" alt="Image 1">
-					<img src="photo/voilier2.jpg" alt="Image 2">
-					<img src="photo/voilier3.jpg" alt="Image 3">
-					<img src="photo/voilier5.jpg" alt="Image 4">
-					<img src="photo/voilier5.jpg" alt="Image 5">
-				</div>
-			</div>
-				<p>Réalisation de la sellerie pour ce voilier ⛵️ OVNI 41 de la cabine avant, arrière et du carré. <br>Coussins réalisés sur mesure, déhoussables et tissu adapté en milieu marin.⚓️</p>
-		</div>
-	
 
+	<section class="photo">
+		<!-- Carrousel 1: Housse de bimini -->
+		<section class="diaporama" id="carousel1">
+		  <h2>Housse de bimini</h2>
+		  <div class="slideshow-container">
+			<div class="mySlides fade">
+			  <img src="photo/bimini.jpg" alt="Bimini 1" style="width:100%">
+			  <div class="text">Bimini 1</div>
+			</div>
+			<div class="mySlides fade">
+			  <img src="photo/bimini2.jpg" alt="Bimini 2" style="width:100%">
+			  <div class="text">Bimini 2</div>
+			</div>
+			<div class="mySlides fade">
+			  <img src="photo/bimini3.jpg" alt="Bimini 3" style="width:100%">
+			  <div class="text">Bimini 3</div>
+			</div>
+			<div class="mySlides fade">
+			  <img src="photo/bimini4.jpg" alt="Bimini 4" style="width:100%">
+			  <div class="text">Bimini 4</div>
+			</div>
+			<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+		  </div>
+
+		  <div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1, 1)"></span>
+			<span class="dot" onclick="currentSlide(2, 1)"></span>
+			<span class="dot" onclick="currentSlide(3, 1)"></span>
+			<span class="dot" onclick="currentSlide(4, 1)"></span>
+		  </div>
+		</section>
+	</section>
+	<br><br>
+	<section class="photo">
+		<!-- Carrousel 2: Housse de bain de soleil -->
+		<section class="diaporama" id="carousel2">
+		  <h2>Housse de bain de soleil</h2>
+		  <div class="slideshow-container">
+			<div class="mySlides fade">
+			  <img src="photo/housse.jpg" alt="Housse 1" style="width:100%">
+			  <div class="text">Housse 1</div>
+			</div>
+			<div class="mySlides fade">
+			  <img src="photo/housse2.jpg" alt="Housse 2" style="width:100%">
+			  <div class="text">Housse 2</div>
+			</div>
+			<div class="mySlides fade">
+			  <img src="photo/housse3.jpg" alt="Housse 3" style="width:100%">
+			  <div class="text">Housse 3</div>
+			</div>
+			<div class="mySlides fade">
+			  <img src="photo/housse4.jpg" alt="Housse 4" style="width:100%">
+			  <div class="text">Housse 4</div>
+			</div>
+			<a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+		  </div>
+
+		  <div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1, 2)"></span>
+			<span class="dot" onclick="currentSlide(2, 2)"></span>
+			<span class="dot" onclick="currentSlide(3, 2)"></span>
+			<span class="dot" onclick="currentSlide(4, 2)"></span>
+		  </div>
+		  <p>Housse de bain de soleil pour un Targa 44 🛥. Finition velcro et sangle pour l’attacher.</p>
+		</section>
+	</section>
 	
+	<br><br>
+	<section class="photo">
+		<!-- Carrousel 3: Sellerie sur mesure pour voilier -->
+		<section class="diaporama" id="carousel3">
+		  <h2>Sellerie sur mesure pour voilier OVNI 41</h2>
+		  <div class="slideshow-container">
+			<div class="mySlides fade">
+			  <img src="photo/voilier.jpg" alt="Voilier 1" style="width:100%">
+			  <div class="text">Voilier 1</div>
+			</div>
+			<div class="mySlides fade">
+			  <img src="photo/voilier2.jpg" alt="Voilier 2" style="width:100%">
+			  <div class="text">Voilier 2</div>
+			</div>
+			<div class="mySlides fade">
+			  <img src="photo/voilier3.jpg" alt="Voilier 3" style="width:100%">
+			  <div class="text">Voilier 3</div>
+			</div>
+			<div class="mySlides fade">
+			  <img src="photo/voilier5.jpg" alt="Voilier 4" style="width:100%">
+			  <div class="text">Voilier 4</div>
+			</div>
+			<a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+		  </div>
+
+		  <div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1, 3)"></span>
+			<span class="dot" onclick="currentSlide(2, 3)"></span>
+			<span class="dot" onclick="currentSlide(3, 3)"></span>
+			<span class="dot" onclick="currentSlide(4, 3)"></span>
+		  </div>
+		  <p>Coussins déhoussables, adaptés au milieu marin ⚓️.</p>
+		</section>
+	</section>
 	
     <footer>
-        <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61572527185595" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/l.assise.terre.et.mer/" target="_blank">Instagram</a>
-        </div>
-        <p>&copy; 2025 L'assise Terre & Mer - Tous droits réservés.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61572527185595" target="_blank">Facebook</a> |
+        <a href="https://www.instagram.com/l.assise.terre.et.mer/" target="_blank">Instagram</a>
+      </div>
+      <p>&copy; 2025 L'assise Terre & Mer - Tous droits réservés.</p>
     </footer>
 
-   
-</body>
+  </body>
 </html>

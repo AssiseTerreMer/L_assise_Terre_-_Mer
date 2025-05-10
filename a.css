@@ -90,6 +90,16 @@ header {
     flex-wrap: wrap;
 }
 
+.diapo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 10%;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+ 
+
 .card {
     background: rgba(255, 255, 255, 0.1);
     padding: 40px;
@@ -103,7 +113,7 @@ header {
     background: rgba(255, 255, 255, 0.1);
     padding: 40px;
     border-radius: 15px;
-	text-align: center;
+    text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(15px);
     transition: transform 0.3s ease-in-out;
@@ -125,49 +135,6 @@ h2 {
     margin-top: 20px;
     font-size: 16px;
     opacity: 0.8;
-}
-
-/* 🔹 DIAPORAMA */
-.diaporama {
-    text-align: center;
-    margin: 50px 0;
-}
-
-.carousel {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    overflow: hidden;
-    padding: 30px 0;
-    position: relative;
-}
-
-.carousel img {
-    width: 250px;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.5s ease-in-out;
-}
-
-button.prev,
-button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-    color: white;
-}
-
-button.prev { left: 10px; }
-button.next { right: 10px; }
-
-button.prev:hover, button.next:hover {
-    background: var(--accent-color);
 }
 
 /* 🔹 CONTACT */
@@ -363,86 +330,114 @@ button:hover {
 .input-container input, .input-container select, .input-container textarea {
     width: 100%;
     padding: 12px;
-    border: 2px solid var(--accent-color); /* Bordure marron clair */
-    border-radius: 5px;
-    font-size: 16px;
-    color: var(--text-color);
-    background: #fff;
-    margin-top: 5px;
-    transition: border-color 0.3s ease;
+    border: 
+
 }
 
-.input-container input:focus, .input-container select:focus, .input-container textarea:focus {
-    border-color: var(--secondary-color); /* Changer la bordure au focus */
-    outline: none;
+/* 🔹 Styles de chaque diapositive dans le diaporama */
+.mySlides {
+  flex: 0 0 30%;
+  margin: 0 10px;
+  display: block;
+  position: relative;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.input-container textarea {
-    resize: vertical; /* Permet à l'utilisateur d'agrandir la zone de texte */
+/* 🔹 Boutons de navigation du diaporama */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  z-index: 1;
+  transition: background-color 0.3s ease;
 }
 
-button[type="submit"] {
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 15px 30px;
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Points de navigation */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.dot:hover {
+  background-color: #717171;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Pour les petits écrans */
+@media (max-width: 600px) {
+  .slideshow-container {
+    flex-direction: column; /* Empile les diapositives en colonne pour les petits écrans */
+    max-width: 100%;
+  }
+
+  .mySlides {
+    flex: 1 0 80%; /* Les diapositives occupent 80% de la largeur pour les petits écrans */
+    margin: 10px 0;
+  }
+
+  .prev, .next {
+    padding: 12px;
     font-size: 18px;
-    font-weight: bold;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    width: 100%;
-    margin-top: 20px;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+  }
 }
 
-button[type="submit"]:hover {
-    background: var(--secondary-color); /* Changer la couleur de fond au survol */
+/* 🔹 Conteneur de diaporama avec cadre */
+.slideshow-container {
+  position: relative;
+  max-width: 90%; /* Limite la largeur du diaporama */
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border: 3px transparent(--accent-color); /* Ajout d'un cadre autour du diaporama */
+  border-radius: 10px; /* Coins arrondis pour un effet plus doux */
+  padding: 10px;
 }
 
-
-
-/* 🔹 FOOTER */
-footer {
-    background: var(--secondary-color);
-    text-align: center;
-    padding: 20px;
-    color: var(--text-color);
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.social-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.social-links a:hover {
-    color: var(--accent-color);
-}
-.carousel {
-    margin-bottom: 20px; /* Espacement entre les sections */
-}
-
-.carousel-images {
-    display: flex; /* Afficher les images sur une seule ligne */
-    justify-content: space-between; /* Espacement égal entre les images */
-    gap: 10px; /* Espacement entre les images */
-}
-
-.carousel img {
-    width: 100%; /* Occupation de toute la largeur de chaque image */
-    max-width: 200px; /* Limiter la largeur maximale des images */
-    height: auto; /* Ajuster la hauteur pour garder le ratio */
-    object-fit: cover; /* Cacher une partie de l'image si elle dépasse */
-}
-
-.carousel p {
-    text-align: center; /* Centrer le texte sous les images */
-    font-size: 1rem;
-    margin-top: 10px; /* Espacement entre les images et le texte */
+/* Assure-toi que les images du diaporama sont bien centrées et gardent leur forme */
+.mySlides img {
+  display: block;
+  margin: 0 auto; /* Cette ligne centre l'image horizontalement */
+  max-width: 200px; /* Permet à l'image de ne pas dépasser la largeur du conteneur */
+  height: auto; /* Maintient le ratio d'aspect de l'image */
+  object-fit: contain; /* L'image garde son ratio sans être déformée */
 }

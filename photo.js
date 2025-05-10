@@ -1,32 +1,36 @@
-// Sélectionner tous les diaporamas
-const carousels = document.querySelectorAll('.diaporama');
+let slideIndex = [1, 1, 1]; // Un tableau avec un index pour chaque carrousel
+let slideId = ["carousel1", "carousel2", "carousel3"]; // Identifiants de chaque carrousel
 
-// Fonction pour afficher une image active dans le diaporama
-carousels.forEach((carousel) => {
-    const images = carousel.querySelectorAll('.carousel-images img');
-    const prevButton = carousel.querySelector('.prev');
-    const nextButton = carousel.querySelector('.next');
-    
-    let currentIndex = 0; // L'index de l'image actuellement affichée
-    
-    // Fonction pour mettre à jour l'affichage des images
-    function updateCarousel() {
-        images.forEach((img, index) => {
-            img.style.display = index === currentIndex ? 'block' : 'none'; // Afficher ou masquer l'image
-        });
-    }
+function showSlides(n, no) {
+  let i;
+  let slides = document.getElementById(slideId[no - 1]).getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
 
-    // Événements pour les boutons de navigation
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-        updateCarousel();
-    });
+  if (n > slides.length) { slideIndex[no - 1] = 1 }
+  if (n < 1) { slideIndex[no - 1] = slides.length }
 
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-        updateCarousel();
-    });
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
 
-    // Initialiser le diaporama
-    updateCarousel();
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex[no - 1] - 1].style.display = "block";
+  dots[slideIndex[no - 1] - 1].className += " active";
+}
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no - 1] += n, no);
+}
+
+function currentSlide(n, no) {
+  showSlides(slideIndex[no - 1] = n, no);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  showSlides(slideIndex[0], 1);
+  showSlides(slideIndex[1], 2);
+  showSlides(slideIndex[2], 3);
 });

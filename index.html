@@ -6,6 +6,7 @@
     <title>L'assise Terre & Mer</title>
     <link rel="icon" href="photo/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="a.css">
+	<script src="aceuil.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -51,23 +52,45 @@
 			
         </section>
 
-        <div class="photo">
-			<div class="carousel">
-				<div class="carousel-images">
-					<img src="photo/voilier.jpg" alt="Image 1">
-					<img src="photo/voilier2.jpg" alt="Image 2">
-					<img src="photo/voilier3.jpg" alt="Image 3">
-					<img src="photo/voilier5.jpg" alt="Image 4">
-					<img src="photo/voilier5.jpg" alt="Image 5">
-				</div>
-			</div>
-			<p>Réalisation de la sellerie pour ce voilier ⛵️ OVNI 41 de la cabine avant, arrière et du carré. <br>Coussins réalisés sur mesure, déhoussables et tissu adapté en milieu marin.⚓️</p>
-		        <section class="contact">
-            <h3>Mes Réalisation</h3>
-            <a href="photo.html" class="contact-btn">Voir plus de Réalisation</a>
-        </section>
-		</div>
+		<section class="photo">
+			<section>
+				  <h2>Housse de bain de soleil</h2>
+				  <div class="slideshow-container">
+					<div class="mySlides fade">
+					  <img src="photo/housse.jpg" alt="Housse 1" style="width:100%">
+					  <div class="text">Housse 1</div>
+					</div>
+					<div class="mySlides fade">
+					  <img src="photo/housse2.jpg" alt="Housse 2" style="width:100%">
+					  <div class="text">Housse 2</div>
+					</div>
+					<div class="mySlides fade">
+					  <img src="photo/housse3.jpg" alt="Housse 3" style="width:100%">
+					  <div class="text">Housse 3</div>
+					</div>
+					<div class="mySlides fade">
+					  <img src="photo/housse4.jpg" alt="Housse 4" style="width:100%">
+					  <div class="text">Housse 4</div>
+					</div>
+					<a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+					<a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+				  </div>
 
+				  <div style="text-align:center">
+					<span class="dot" onclick="currentSlide(1, 2)"></span>
+					<span class="dot" onclick="currentSlide(2, 2)"></span>
+					<span class="dot" onclick="currentSlide(3, 2)"></span>
+					<span class="dot" onclick="currentSlide(4, 2)"></span>
+				  </div>
+				  <p>Housse de bain de soleil pour un Targa 44 🛥. Finition velcro et sangle pour l’attacher.</p>
+			</section>
+			<p>Réalisation de la sellerie pour ce voilier ⛵️ OVNI 41 de la cabine avant, arrière et du carré. <br>Coussins réalisés sur mesure, déhoussables et tissu adapté en milieu marin.⚓️</p>
+			<section class="contact">
+				<h3>Mes Réalisations</h3>
+				<a href="photo.html" class="contact-btn">Voir plus de Réalisations</a>
+			</section>
+			</div>
+		</section>
 
         <section class="contact">
             <h3>Contactez-nous</h3>
@@ -84,6 +107,6 @@
         <p>&copy; 2025 L'assise Terre & Mer - Tous droits réservés.</p>
     </footer>
 
-    <script src="aceuil.js"></script>
+  
 </body>
 </html>
