@@ -455,3 +455,59 @@ button:hover {
   height: auto; /* Maintient le ratio d'aspect de l'image */
   object-fit: contain; /* L'image garde son ratio sans être déformée */
 }
+
+
+
+
+
+
+/* 🔹 S'assurer que le footer reste en bas de la page */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* 🔹 Section Présentation */
+.presentations {
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.presentations h2 {
+    font-size: 36px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+/* 🔹 Footer */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: var(--secondary-color);
+    text-align: center;
+    color: var(--text-color);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
