@@ -1,13 +1,14 @@
-let slideIndex = [1, 1, 1]; // Un tableau avec un index pour chaque carrousel
-let slideId = ["carousel1", "carousel2", "carousel3"]; // Identifiants de chaque carrousel
+let slideIndex = [1, 1, 1, 1];
+let slideId = ["carousel1", "carousel2", "carousel3", "carousel4"];
 
 function showSlides(n, no) {
   let i;
-  let slides = document.getElementById(slideId[no - 1]).getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
+  const carousel = document.getElementById(slideId[no - 1]);
+  const slides = carousel.getElementsByClassName("mySlides");
+  const dots = carousel.getElementsByClassName("dot");
 
-  if (n > slides.length) { slideIndex[no - 1] = 1 }
-  if (n < 1) { slideIndex[no - 1] = slides.length }
+  if (n > slides.length) slideIndex[no - 1] = 1;
+  if (n < 1) slideIndex[no - 1] = slides.length;
 
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
@@ -18,7 +19,9 @@ function showSlides(n, no) {
   }
 
   slides[slideIndex[no - 1] - 1].style.display = "block";
-  dots[slideIndex[no - 1] - 1].className += " active";
+  if (dots.length > 0) {
+    dots[slideIndex[no - 1] - 1].className += " active";
+  }
 }
 
 function plusSlides(n, no) {
@@ -30,7 +33,7 @@ function currentSlide(n, no) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  showSlides(slideIndex[0], 1);
-  showSlides(slideIndex[1], 2);
-  showSlides(slideIndex[2], 3);
+  for (let i = 0; i < slideId.length; i++) {
+    showSlides(1, i + 1);
+  }
 });

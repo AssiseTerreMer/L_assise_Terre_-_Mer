@@ -16,6 +16,20 @@
     scroll-behavior: smooth;
 }
 
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* optionnel pour des coins arrondis */
+}
+
+
 body {
     background: var(--primary-color);
     color: var(--text-color);
